@@ -1,38 +1,59 @@
-# create-svelte
+# Exam Front-End Part 2
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Welcome to the Exam Front-End Part 2 project, a SvelteKit application focused on Employee Management with CRUD operations. This project aims to provide a user-friendly interface for efficiently managing employee information, enabling Create, Read, Update, and Delete operations seamlessly.
 
-## Creating a project
+## Table of Contents
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Prerequisites
 
-# create a new project in my-app
-npm create svelte@latest my-app
+Ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (version 12 or higher)
+- [npm](https://www.npmjs.com/) (version 6 or higher)
+
+## Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/cruzmarkus4321/exam-front-end-part-2.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd exam-front-end-part-2
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+## Configuration
+
+Configure the GraphQL endpoint in the `src/lib/js/urqlClient.js` file:
+
+```javascript
+const client = createClient({
+  url: 'http://localhost:8080/graphql', // Replace with your GraphQL endpoint
+  exchanges: [cacheExchange, fetchExchange],
+  maskTypename: true
+});
 ```
 
-## Developing
+## Usage
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+1. Run the application using npm:
 
-```bash
-npm run dev
+    ```bash
+    npm run dev
+    ```
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+2. Open your web browser and navigate to [http://localhost:5173](http://localhost:5173)
